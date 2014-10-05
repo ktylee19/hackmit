@@ -53,8 +53,8 @@ form {
     width: 250px;
     position: relative;
     z-index: 200;
-    left: 400px;
-    top: -2800px;
+    left: -100px;
+    top: -2200px;
     background: url('ninjasOnTransparent.png') no-repeat;
     border: none;
 }
