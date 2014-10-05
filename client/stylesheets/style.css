@@ -1,3 +1,8 @@
+body {
+    background-color: black;
+    color: white;
+}
+
 #game {
 	height: 640px;
 	width: 1136px;
@@ -7,11 +12,20 @@ map {
     height: 3000px;
     width: 3000px;
 }
-img {
+#bg {
 	height: 3000px; 
 	width: 3000px; 
 	position: relative;
 	max-width: none;
+}
+
+#nocs {
+    height: 640px;
+    width: 1136px;
+    position: absolute;
+    z-index: 5000;
+    left: 0;
+    top: 0;
 }
 
 .row {
@@ -19,6 +33,8 @@ img {
 }
 
 .form-control {
+    background-color: white;
+    color: black;
 	width: 100%;
 }
 
@@ -32,12 +48,14 @@ form {
 }
 
 #goal {
-    height: 500px;
-    width: 500px;
+    height: 200px;
+    width: 250px;
     position: relative;
     z-index: 200;
     left: 400px;
-    top: -2500px;
+    top: -2800px;
+    background: url('ninjasOnTransparent.png') no-repeat;
+    border: none;
 }
 
 #left {

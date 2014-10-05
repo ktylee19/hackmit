@@ -18,10 +18,10 @@ Template.play.created = function (e) {
 };
 
 Template.play.rendered = function(e) {
-    console.log($('img').position());
-    $('img').css("left", -1000)
-    $('img').css("top", -(user.num-1) * 640);
-    console.log($('img').position());
+    console.log($('#bg').position());
+    $('#bg').css("left", -1000)
+    $('#bg').css("top", -(user.num-1) * 640);
+    console.log($('#bg').position());
 }
 
 Template.play.events({
@@ -34,14 +34,6 @@ Template.play.events({
                   Router.go("finish");
           };
       route();
-      // Games.update({ _id: id },
-      //     {$inc: {place: 1}},
-      //     function (error) {
-      //         if (error)
-      //             alert(error.reason);
-      //         else
-      //             Router.go("finish");
-      //     });
     }
 });
 
@@ -53,8 +45,8 @@ window.addEventListener("deviceorientation", function(event) {
     var frontToBack = event.beta;
 
     // left-right motion
-    $('img').css("left", function() {
-        var pos = parseInt($('img').css("left"));
+    $('#bg').css("left", function() {
+        var pos = parseInt($('#bg').css("left"));
         if (Math.abs(leftToRight) > 20){
             if ((leftToRight < 0) && (pos <= 0)){
                 return pos - leftToRight;
