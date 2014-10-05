@@ -1,1 +1,1 @@
-Positions = new Meteor.Collection('positions');
+Users = new Meteor.Collection('userSessions');

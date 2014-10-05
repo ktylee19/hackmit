@@ -1,3 +1,3 @@
-Meteor.publish('positions', function () {
-	return Positions.find();
+Meteor.publish("userSessions", function() {
+  return Users.find();
 });

@@ -1,7 +1,13 @@
 Template.select.events({
     'submit form': function(e) {
         e.preventDefault();
-        syncCode = $(e.target).find('[name=sync-code').val();
-        Router.go('waiting', syncCode);
+        var sync = $(e.target).find('[name=code]').val();
+        var num = Users.find({ "sync": sync}).count() + 1;
+		user = {
+        	sync: sync,
+        	num: num,
+        };
+        user._id = Users.insert(user);
+        Router.go('waiting');
   }
 });
