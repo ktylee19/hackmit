@@ -44,33 +44,35 @@ window.addEventListener("deviceorientation", function(event) {
 
     // left-right motion
     $('img').css("left", function() {
-        var angle = parseInt($('img').css("left"));
-        if (Math.abs(leftToRight) > 20)
-            return angle - leftToRight;
-        else
-            return angle;
+        var pos = parseInt($('img').css("left"));
+        if (Math.abs(leftToRight) > 20){
+            if ( !((leftToRight < 0) && (pos <=0)) && !((leftToRight > 0) && (pos >= 1136)) ){
+                return pos - leftToRight;
+            }
+        }
+        return pos;
     });
     $('#goal').css("left", function() {
-        var angle = parseInt($('img').css("left"));
+        var pos = parseInt($('img').css("left"));
         if (Math.abs(leftToRight) > 20)
-            return angle - leftToRight;
+            return pos - leftToRight;
         else
-            return angle;
+            return pos;
     });
 
     // front-back motion
     $('img').css("top", function() {
-        var angle = parseInt($('img').css("top"));
+        var pos = parseInt($('img').css("top"));
         if (Math.abs(frontToBack) > 20)
-            return angle - frontToBack;
+            return pos - frontToBack;
         else
-            return angle;
+            return pos;
         });
     $('#goal').css("top", function() {
-        var angle = parseInt($('img').css("top"));
+        var pos = parseInt($('img').css("top"));
         if (Math.abs(frontToBack) > 20)
-            return angle - frontToBack;
+            return pos - frontToBack;
         else
-            return angle;
+            return pos;
     });
 });
