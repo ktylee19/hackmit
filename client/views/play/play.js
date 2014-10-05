@@ -13,10 +13,10 @@ Template.play.created = function (e) {
 };
 
 Template.play.rendered = function(e) {
-    console.log($('img').position());
-    $('img').css("left", -1000)
-    $('img').css("top", -(user.num-1) * 640);
-    console.log($('img').position());
+    console.log($('#bg').position());
+    $('#bg').css("left", -1000)
+    $('#bg').css("top", -(user.num-1) * 640);
+    console.log($('#bg').position());
 }
 
 Template.play.events({
@@ -43,8 +43,8 @@ window.addEventListener("deviceorientation", function(event) {
     var frontToBack = event.beta;
 
     // left-right motion
-    $('img').css("left", function() {
-        var pos = parseInt($('img').css("left"));
+    $('#bg').css("left", function() {
+        var pos = parseInt($('#bg').css("left"));
         if (Math.abs(leftToRight) > 20){
             if ( !((leftToRight < 0) && (pos <=0)) && !((leftToRight > 0) && (pos >= 1136)) ){
                 return pos - leftToRight;
@@ -53,7 +53,7 @@ window.addEventListener("deviceorientation", function(event) {
         return pos;
     });
     $('#goal').css("left", function() {
-        var pos = parseInt($('img').css("left"));
+        var pos = parseInt($('#bg').css("left"));
         if (Math.abs(leftToRight) > 20)
             return pos - leftToRight;
         else
@@ -61,15 +61,15 @@ window.addEventListener("deviceorientation", function(event) {
     });
 
     // front-back motion
-    $('img').css("top", function() {
-        var pos = parseInt($('img').css("top"));
+    $('#bg').css("top", function() {
+        var pos = parseInt($('#bg').css("top"));
         if (Math.abs(frontToBack) > 20)
             return pos - frontToBack;
         else
             return pos;
         });
     $('#goal').css("top", function() {
-        var pos = parseInt($('img').css("top"));
+        var pos = parseInt($('#bg').css("top"));
         if (Math.abs(frontToBack) > 20)
             return pos - frontToBack;
         else
