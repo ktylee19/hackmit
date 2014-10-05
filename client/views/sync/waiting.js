@@ -1,7 +1,7 @@
 Template.waiting.helpers({
 	number: function() {
 		if (typeof user == 'undefined') { return 0; }
-		else {	return user.num; }
+		else {	return user.num-1; }
 	},
 	remain: function() {
 		if (typeof user == 'undefined') { return 0; }

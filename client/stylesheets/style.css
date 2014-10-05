@@ -48,13 +48,13 @@ form {
 }
 
 #goal {
-    height: 500px;
-    width: 500px;
+    height: 200px;
+    width: 250px;
     position: relative;
     z-index: 200;
     left: 400px;
-    top: -2500px;
-    background: url('/public/ninjas.jpg') no-repeat;
+    top: -2800px;
+    background: url('ninjasOnTransparent.png') no-repeat;
     border: none;
 }
 
