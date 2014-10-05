@@ -1,0 +1,18 @@
+#game {
+	height: 800px;
+	width: 800px;
+	overflow: hidden;
+}
+
+img {
+	height: 3000px; 
+	width: 3000px; 
+	position: relative;
+	left: 0px;
+	top: 0px;
+	max-width: none
+}
+
+.row {
+	margin-top: 300px;
+}
