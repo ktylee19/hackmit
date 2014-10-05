@@ -61,11 +61,11 @@ Template.play.events({
                 return up - 100;
         });
         $('#goal').css("top", function() {
-            var top = parseInt($('#goal').css("top"));
-            if (top < -2400)
-                return top;
+            var up = parseInt($('#goal').css("top"));
+            if (up < -2400)
+                return up;
             else
-                return top - 100;
+                return up - 100;
         });
     },
     'click #left': function() {
@@ -77,15 +77,22 @@ Template.play.events({
                 return right + 100;
         });
         $('#goal').css("left", function() {
-            var top = parseInt($('#goal').css("left"));
-            if (top > -100)
-                return top;
+            var right = parseInt($('#goal').css("left"));
+            if (right > -100)
+                return right;
             else
-                return top + 100;
+                return right + 100;
         });
     },
     'click #goal': function() {
-        winner = true;
-        Router.go("finish");
+        place = Games.findOne({_id: gameid}).place;
+        Games.update(gameid,
+            {$set: {"place": place + 1}},
+            function (error) {
+                if (error)
+                    alert(error.reason);
+                else
+                    Router.go("finish");
+            });
     }
 });
