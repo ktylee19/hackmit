@@ -1,18 +1,61 @@
 #game {
-	height: 800px;
-	width: 800px;
+	height: 640px;
+	width: 1136px;
 	overflow: hidden;
 }
-
+map {
+    height: 3000px;
+    width: 3000px;
+}
 img {
 	height: 3000px; 
 	width: 3000px; 
 	position: relative;
-	left: 0px;
-	top: 0px;
-	max-width: none
+	max-width: none;
 }
 
 .row {
-	margin-top: 300px;
+	margin-top: 150px;
+}
+
+.form-control {
+	width: 100%;
+}
+
+form {
+	text-align: center;
+}
+
+.navhelp {
+    position: absolute;
+    z-index: 100;
+}
+
+#goal {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    z-index: 200;
+    left: 400px;
+    top: -2500px;
+}
+
+#left {
+    top: 10px;
+    left: 10px;
+}
+
+#right {
+    top: 50px;
+    left: 10px;
+}
+
+#up {
+    top: 90px;
+    left: 10px;
+}
+
+#down {
+    top: 130px;
+    left: 10px;
 }
